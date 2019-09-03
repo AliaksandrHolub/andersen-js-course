@@ -16,7 +16,9 @@ export function task5Old(array, obj) {
 // Напишите реализацию функции task5Old на ES6+ ниже этого комментария.
 // При желании, можете использовать стрелочную функцию, вместо обычной
 
-export const task5New = (array, obj) => {
-  const [name, val, objName, objValue] = [...array, obj.name, obj.val];
-  return [name, val, objName, objValue];
-}
+export const task5New = ([name, val], { name: objname, val: objVal }) => [
+  name,
+  val,
+  objname,
+  objVal,
+];

@@ -18,5 +18,5 @@
 // ];
 
 export default function(value) {
-  return value.reduce((acc, item) => (item.isActive === true ? acc + item.members : acc), 0);
-  }
+  return value.reduce((acc, item) => (item.isActive ? acc + item.members : acc), 0);
+}

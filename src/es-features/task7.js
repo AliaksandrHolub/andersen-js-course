@@ -22,8 +22,8 @@ export function task7Old() {
 // При желании, можете использовать стрелочную функцию, вместо обычной
 
 export const task7New = () => {
-  let obj = { test: 0 };
+  const obj = { test: 0 };
   const obj2 = { foo: 1, bar: 2 };
-  obj = {...obj, ...obj2};
+  Object.assign(obj, obj2);
   return obj;
 }

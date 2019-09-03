@@ -1,3 +1,5 @@
+import { runInNewContext } from "vm";
+
 /**
  * Реализовать функцию createGenerator в этом файле, и экспортировать ее.
  *
@@ -13,7 +15,13 @@
  * generator.next(); -> 'Complete!'
  * generator.next(); -> 'Complete!'
  */
-export default function*(arr) {
-  yield* arr;
-  while (true) yield 'Complete!';
+export default function(arr) {
+  let shift = 0;
+  const wokingArray = [...arr];
+  const objectGenerator = {
+    next() {
+      return shift < wokingArray.length ? wokingArray[shift++] : 'Complete!';
+    },
+  }
+  return objectGenerator;
 }

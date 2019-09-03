@@ -16,11 +16,8 @@
  * console.log(arrayDiff([1, 3, 3, 4], [1, 3, '4'])); -> [4, '4']
  */
 export default function(arrayOne, arrayTwo) {
-  const resultOne = arrayOne.filter(
-    elemArrayOne => arrayTwo.find(elemArrayTwo => elemArrayTwo === elemArrayOne) === undefined
-  );
-  const resultTwo = arrayTwo.filter(
-    elemArrayTwo => arrayOne.find(elemArrayOne => elemArrayOne === elemArrayTwo) === undefined
-  );
-  return [...resultOne, ...resultTwo];
+  return [
+    ...arrayOne.filter(elem => !arrayTwo.includes(elem)),
+    ...arrayTwo.filter(elem => !arrayOne.includes(elem)),
+  ];
 }
