@@ -20,3 +20,4 @@
  * console.log(transformArrayToNumber([10, 20, 30], (acc, item) => acc * item), 1); -> 6000
  * console.log(transformArrayToNumber([10, 20, 30], (acc, item) => acc - item)); -> -60
  */
+export default (arr, funct, startValue = 0) => arr.reduce(funct, startValue);
